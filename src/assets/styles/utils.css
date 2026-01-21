@@ -1,0 +1,25 @@
+@layer utilities {
+  .container {
+    @apply mx-auto w-full max-w-container px-4 tablet:px-10 desktop:px-20;
+  }
+
+  .container-wide {
+    @apply mx-auto w-full max-w-container-wide px-4 tablet:px-10 desktop:px-20;
+  }
+
+  .container-full {
+    @apply mx-auto w-full max-w-container-full px-4 tablet:px-10 desktop:px-20;
+  }
+
+  .section {
+    @apply py-16 tablet:py-20 desktop:py-30;
+  }
+
+  .section-gray {
+    @apply bg-linear-(--gradient-gray-fade-up-solid);
+  }
+
+  .card {
+    @apply bg-linear-(--gradient-gray-fade-up-solid) rounded-2xl border border-gray-300;
+  }
+}

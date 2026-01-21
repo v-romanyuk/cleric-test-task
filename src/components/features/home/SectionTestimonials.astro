@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets'
+import LogoBBC from '@/assets/images/logos/logo-bbc.svg'
+import Button from '@/components/ui/Button.astro'
+import TestimonialsPersonImg from '@/assets/images/home/testimonial-person.png'
+---
+
+<section class="container section pt-10!">
+  <div class="flex gap-10 card">
+    <div class="shrink-0 max-w-[330px] pl-4 hidden desktop:block">
+      <Image src={TestimonialsPersonImg} alt="Testimonials Person" class="size-full object-cover" />
+    </div>
+
+    <div class="flex flex-col gap-10 p-8 grow items-start">
+      <h4 class="order-2 desktop:order-1">
+        “I see Cleric functioning as an SRE companion for our Software Engineers.
+        If one team has already solved an alert, we can apply that knowledge elsewhere.”
+      </h4>
+
+      <LogoBBC class="h-6 w-auto order-1 desktop:order-2" />
+
+      <div class="order-3 flex gap-4 items-center w-full flex-wrap">
+        <div class="flex items-center gap-2 grow">
+            <!-- Avatar -->
+            <div class="rounded-full size-18 desktop:hidden bg-cover bg-center overflow-hidden bg-white shrink-0">
+              <Image src={TestimonialsPersonImg} alt="Testimonials Person" class="size-full object-cover" />
+            </div>
+
+            <!-- Name and Role -->
+            <div>
+              <p class="text-lg font-semibold">Maxime Fouilleul </p>
+              <p class="text-lg">Head of Infrastructure & Operations | BlaBlaCar</p>
+            </div>
+        </div>
+
+        <Button type="primary" mode="dark" class="shrink-0">Read case study</Button>
+      </div>
+    </div>
+  </div>
+</section>

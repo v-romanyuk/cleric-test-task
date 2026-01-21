@@ -1,0 +1,69 @@
+@theme {
+  /* Breakpoints */
+  --breakpoint-*: initial;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 992px;
+
+  /* Container / Max-width */
+  --max-width-container: 1350px;
+  --max-width-container-wide: 1680px;
+  --max-width-container-full: 1920px;
+
+
+  /* Colors */
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+
+  /* Grays - lightest to darkest */
+  --color-gray-100: #F8F8F8;
+  --color-gray-200: #F7F9FA;
+  --color-gray-300: #EAEAEA;
+  --color-gray-400: #E0E0E0;
+  --color-gray-500: #939393;
+  --color-gray-600: #6B6B6B;
+  --color-gray-700: #48484A;
+  --color-gray-800: #313131;
+
+  /* Purples - lightest to darkest */
+  --color-purple-100: #E1DEFE;
+  --color-purple-200: #C29CF1;
+  --color-purple-300: #AA6EEE;
+  
+
+  /* Fonts */
+  --font-cleric-sans: 'Cleric Sans', system-ui, sans-serif;
+  --font-gt-alpina: 'GT Alpina', Georgia, serif;
+  --font-gt-america-mono: 'GT America Mono', ui-monospace, monospace;
+
+  /* Text sizes */
+  --text-large: 1.125rem;
+  --text-large--line-height: 140%;
+  --text-large--letter-spacing: 0%;
+
+  --text-medium: 0.9375rem;
+  --text-medium--line-height: 140%;
+  --text-medium--letter-spacing: 0%;
+
+  --text-small: 0.875rem;
+  --text-small--line-height: 145%;
+  --text-small--letter-spacing: 0%;
+
+  --text-tiny: 0.75rem;
+  --text-tiny--line-height: 150%;
+  --text-tiny--letter-spacing: 2%;
+
+  /* Shadows */
+  --shadow-soft: 0px 3.38px 20.29px 0px #4248461A;
+  --shadow-elevated: 0px 3.38px 64.5px 5px #272B311A;
+}
+
+/* Gradients - defined as CSS variables (not in @theme) */
+:root {
+  --gradient-white-fade-down: 180deg, transparent 0%, var(--color-white) 77.88%;
+  --gradient-gray-fade-up: 0deg, transparent -0.04%, var(--color-gray-100) 100%;
+  --gradient-gray-fade-up-solid: 0deg, var(--color-gray-100) -0.04%, var(--color-gray-200) 100%;
+  --gradient-gray-fade-down: 180deg, transparent -0.04%, var(--color-gray-100) 100%;
+  --gradient-gray-fade-right: 90deg, transparent -0.04%, var(--color-gray-100) 100%;
+  --gradient-gray-fade-left: -90deg, transparent -0.04%, var(--color-gray-100) 100%;
+  --gradient-dark-blue-fade: 270deg, rgba(12, 24, 47, 0) 18.56%, rgba(12, 24, 47, 0.2) 96.72%;
+}

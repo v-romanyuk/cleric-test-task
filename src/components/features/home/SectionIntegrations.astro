@@ -1,0 +1,68 @@
+---
+import { Image } from 'astro:assets'
+import KubernetesImg from '@/assets/images/logos/kubernetes.png'
+import SectionHeader from '@/components/layout/SectionHeader.astro'
+import AzureImg from '@/assets/images/logos/azure.png'
+import ConfluenceImg from '@/assets/images/logos/confluence.png'
+import DatadogImg from '@/assets/images/logos/datadog.png'
+import EcrImg from '@/assets/images/logos/ecr.png'
+import ElasticImg from '@/assets/images/logos/elastic.png'
+import GithubImg from '@/assets/images/logos/github.png'
+import GitlabImg from '@/assets/images/logos/gitlab.png'
+import GoogleCloudImg from '@/assets/images/logos/googlecloud.png'
+import GrafanaImg from '@/assets/images/logos/grafana.png'
+import NomadImg from '@/assets/images/logos/nomad.png'
+import NotionImg from '@/assets/images/logos/notion.png'
+import PrometheusImg from '@/assets/images/logos/prometheus.png'
+import PulumiImg from '@/assets/images/logos/pulumi.png'
+import TerraformImg from '@/assets/images/logos/terraform.png'
+import IconArrowLink from '@/assets/icons/arrow-link.svg'
+
+const logos = [
+  { name: 'KubernetesImg', image: KubernetesImg },
+  { name: 'NotionImg', image: NotionImg },
+  { name: 'EcrImg', image: EcrImg },
+  { name: 'PulumiImg', image: PulumiImg },
+  { name: 'TerraformImg', image: TerraformImg },
+  { name: 'ElasticImg', image: ElasticImg },
+  { name: 'NomadImg', image: NomadImg },
+  { name: 'GithubImg', image: GithubImg },
+  { name: 'GitlabImg', image: GitlabImg },
+  { name: 'GrafanaImg', image: GrafanaImg },
+  { name: 'PrometheusImg', image: PrometheusImg },
+  { name: 'AzureImg', image: AzureImg },
+  { name: 'ConfluenceImg', image: ConfluenceImg },
+  { name: 'DatadogImg', image: DatadogImg },
+  { name: 'GoogleCloudImg', image: GoogleCloudImg }
+
+]
+---
+<section class="section">
+  <div class="container">
+    <SectionHeader
+      badge="Integrations"
+      title="Built to plug right into your stack"
+      subtitle="Connect your whole stack in an afternoon. Read access by default, write access when you're ready."
+      tabletAlign="center"
+    />
+  </div>
+
+  <div class={[
+    'mt-10 tablet:mt-12 desktop:mt-16 grid grid-cols-5 tablet:flex desktop:gap-x-20 gap-x-4 gap-y-4 justify-center flex-wrap',
+    'max-w-[640px] desktop:max-w-[1200px] mx-auto max-tablet:px-4'
+  ].join(' ')}>
+    {logos.map((logo) => (
+      <div class="flex items-center justify-center size-16 desktop:size-20 bg-gray-200 rounded-2xl">
+        <Image src={logo.image} alt={logo.name} class="h-8 w-auto" />
+      </div>
+    ))}
+  </div>
+
+  <p class="text-lg mt-10 text-center">
+    See if Cleric is a fit
+    <a href="#" class="inline-flex items-center underline underline-offset-3 gap-1 ml-1">
+      for your stack
+      <IconArrowLink class="ml-1" />
+    </a>
+  </p>
+</section>

@@ -1,0 +1,67 @@
+---
+interface Props {
+  type?: 'primary' | 'secondary'
+  mode?: 'light' | 'dark'
+  outlined?: boolean
+  size?: 'small' | 'medium' | 'large'
+  class?: string
+}
+
+const {
+  type = 'primary',
+  mode = 'light',
+  outlined = false,
+  size = 'medium',
+  class: className = '',
+  ...rest
+} = Astro.props
+
+const sizeClasses = {
+  small: 'px-4 py-1.5 h-8',
+  medium: 'px-6 py-2.5 h-10',
+  large: 'px-8 py-3 h-12'
+}
+
+const getVariantClasses = () => {
+  // Primary Light
+  if (type === 'primary' && mode === 'light' && !outlined) {
+    return 'bg-white hover:bg-gray-300/90 text-gray-800 border-black/10'
+  }
+  // Primary Light Outlined
+  if (type === 'primary' && mode === 'light' && outlined) {
+    return 'bg-white/5 hover:bg-white/10 text-white border-white'
+  }
+  // Secondary Light
+  if (type === 'secondary' && mode === 'light') {
+    return 'bg-white/20 hover:bg-white/30 text-white border-transparent'
+  }
+  // Primary Dark
+  if (type === 'primary' && mode === 'dark' && !outlined) {
+    return 'bg-black hover:bg-black/80 text-white border-black/10'
+  }
+  // Primary Dark Outlined
+  if (type === 'primary' && mode === 'dark' && outlined) {
+    return 'bg-black/5 hover:bg-black/10 text-gray-800 border-black/50'
+  }
+  // Secondary Dark
+  if (type === 'secondary' && mode === 'dark') {
+    return 'bg-black/10 hover:bg-black/20 text-black border-transparent'
+  }
+  return ''
+}
+
+const classes = [
+  'inline-flex items-center justify-center',
+  'text-[15px] font-medium rounded-full',
+  'box-border border',
+  'transition-colors duration-100 ease-out',
+  'cursor-pointer',
+  sizeClasses[size],
+  getVariantClasses(),
+  className
+].filter(Boolean).join(' ')
+---
+
+<button class={classes} {...rest}>
+  <slot />
+</button>

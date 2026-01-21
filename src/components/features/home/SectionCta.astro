@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets'
+import CtaImgDesktop from '@/assets/images/home/cta/cta_bg_desktop.png'
+import Button from '@/components/ui/Button.astro'
+---
+
+<section class="section">
+  <div class="container">
+    <div class={[
+      'rounded-2xl relative overflow-hidden text-white bg-linear-(--gradient-dark-blue-fade)',
+      'px-8 py-[100px] tabled:px-12 tablet:py-[160px] desktop:px-[120px] desktop:py-[120px]'
+    ].join(' ')}>
+      <Image src={CtaImgDesktop} alt="Cta" class="absolute size-full inset-0 object-cover z-[-1]" />
+
+      <div class="tablet:max-w-[510px]">
+        <h2>Unblock your engineers. Start in minutes.</h2>
+        <p class="text-subtitle mt-4">Setup takes minutes. Read-only by default.</p>
+
+        <div class="mt-12 tablet:mt-14 desktop:mt-12 flex max-tablet:flex-col gap-6 w-full">
+          <Button type="primary" mode="light" class="w-full tablet:w-[160px]">Start for free</Button>
+          <Button type="primary" mode="light" class="w-full tablet:w-[160px]" outlined>Request Demo</Button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

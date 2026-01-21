@@ -1,0 +1,30 @@
+---
+import { Image } from 'astro:assets'
+import SecurityImg from '@/assets/images/home/security.png'
+import IconArrowLink from '@/assets/icons/arrow-link.svg'
+import Badge from '@/components/ui/Badge.astro'
+---
+<section class="section section-gray">
+  <div class="container grid desktop:grid-cols-2 gap-10 items-center">
+    <div>
+      <Badge>Security-first</Badge>
+
+      <h2 class="mt-6">Paranoid by design</h2>
+
+      <p class="text-lg mt-6">
+        Read-only by default. Every action logged, every investigation auditable.
+        Your data encrypted everywhere and never used for training.
+      </p>
+
+      <p class="text-lg mt-6">
+        Learn more in our
+        <a href="#" class="inline-flex items-center underline underline-offset-3 gap-1 ml-1">
+          Trust center
+          <IconArrowLink class="ml-1" />
+        </a>
+      </p>
+    </div>
+
+    <Image src={SecurityImg} alt="Security" class="w-full max-desktop:max-w-[500px] mx-auto" />
+  </div>
+</section>

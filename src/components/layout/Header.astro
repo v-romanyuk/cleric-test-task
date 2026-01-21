@@ -1,0 +1,38 @@
+---
+import Logo from '@/assets/images/logos/cleric/logo.svg'
+import Button from '@/components/ui/Button.astro'
+import MenuIcon from '@/assets/icons/menu.svg'
+
+const navigation = ['Product', 'Solutions', 'Resources', 'About', 'Careers'];
+---
+
+<header class="absolute top-0 left-0 w-full z-50 h-14">
+  <div class="container-wide h-full">
+    <!-- Logo -->
+    <div class="flex items-center justify-between h-full py-3">
+      <Logo class="h-6 w-auto" />
+
+      <!-- Navigation -->
+      <div class="flex items-center gap-8 max-tablet:hidden">
+        <!-- Navigation Links -->
+        <div class="flex items-center gap-8">
+          {
+            navigation.map((item) => (
+              <a href="#" class="text-medium font-medium text-white">
+                {item}
+              </a>
+            ))
+          }
+        </div>
+
+        <!-- Demo button -->
+        <Button type="secondary" mode="light" size="small">Request Demo</Button>
+      </div>
+
+      <!-- Mobile navigation -->
+      <div class="max-tablet:block hidden">
+        <MenuIcon class="size-4" class="text-white" />
+      </div>
+    </div>
+  </div>
+</header>

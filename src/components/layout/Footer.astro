@@ -1,0 +1,64 @@
+---
+import { Image } from 'astro:assets'
+import Logo from '@/assets/images/logos/cleric/logo-small.svg'
+import LogoLinkedin from '@/assets/images/logos/linkedin.png'
+import LogoX from '@/assets/images/logos/x.png'
+
+const navGroups: { title: string; items: { name: string; href: string }[] }[] = [
+  {
+    title: 'Cleric',
+    items: [
+      { name: 'About', href: '#' },
+      { name: 'Careers', href: '#' },
+      { name: 'Product', href: '#' },
+      { name: 'Blog', href: '#' },
+      { name: 'Webinars', href: '#' }
+    ]
+  },
+  {
+    title: 'Help & Security',
+    items: [
+      { name: 'Trust Center', href: '#' },
+      { name: 'Terms of Use', href: '#' },
+      { name: 'Privacy Policy', href: '#' }
+    ]
+  },
+  {
+    title: 'Use Cases',
+    items: [
+      { name: 'Alert Investigation', href: '#' },
+      { name: 'Root Cause Analysis', href: '#' },
+      { name: 'Fix Recommendation', href: '#' },
+      { name: 'On-Call Automation', href: '#' },
+      { name: 'Incident Triage', href: '#' },
+      { name: 'Deployment Failures  ', href: '#' }
+    ]
+  }
+]
+---
+
+<div class="container py-6">
+  <div class="grid grid-cols-2 tablet:grid-cols-4 tablet:gap-x-6 gap-y-10 desktop:gap-y-16">
+    <Logo class="h-8 text-black max-tablet:col-span-2" />
+
+    {navGroups.map((group) => (
+      <div class="space-y-6">
+        <p class="text-[15px] font-semibold text-black">{group.title}</p>
+
+        <ul class="space-y-2 text-[15px] text-black">
+          {group.items.map((item) => (
+            <li><a href={item.href}>{item.name}</a></li>
+          ))}
+        </ul>
+      </div>
+    ))}
+
+    <!-- Social Links -->
+    <div class="flex gap-4 items-center max-tablet:col-span-2 max-tablet:justify-self-center">
+      <Image src={LogoLinkedin} alt="LinkedIn" class="h-4.5 w-auto" />
+      <Image src={LogoX} alt="X" class="h-4.5 w-auto" />
+    </div>
+
+    <!-- Copyright -->
+    <p class="text-[15px] text-gray-500 max-tablet:col-span-2 max-tablet:justify-self-center">© Cleric 2025</p>
+  </div>

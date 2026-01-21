@@ -1,0 +1,97 @@
+---
+import { Image } from 'astro:assets'
+import Feature1Img from '@/assets/images/home/features/feature-1.png'
+import Feature2Img from '@/assets/images/home/features/feature-2.png'
+import Feature3Img from '@/assets/images/home/features/feature-3.png'
+import Feature4Img from '@/assets/images/home/features/feature-4.png'
+import LogoSlack from '@/assets/images/logos/logo-slack.svg?raw'
+
+import SectionHeader from '@/components/layout/SectionHeader.astro'
+
+const features: {
+  title: string
+  description: {
+    text: string
+    additional?: {
+      text: string
+      icon?: string
+    }
+  }
+  image: ImageMetadata
+}[] = [
+  {
+    title: 'Skip straight to the answer',
+    image: Feature1Img,
+    description: {
+      text: "Cleric automatically investigates alerts and delivers root cause analysis so you know exactly what's wrong and whether to act."
+    }
+  },
+  {
+    title: 'Trust but verify',
+    image: Feature2Img,
+    description: {
+      text: 'See exactly how Cleric reached its conclusions so you can trust the diagnosis and move to resolution.'
+    }
+  },
+  {
+    title: 'Ship a fix',
+    image: Feature3Img,
+    description: {
+      text: 'Work with Cleric to ship fixes by asking questions, giving instructions, and collaborating until the issue is resolved.',
+      additional: {
+        text: 'Works inside your',
+        icon: LogoSlack
+      }
+    }
+  },
+  {
+    title: 'Learns from failure',
+    image: Feature4Img,
+    description: {
+      text: "Engineers leave, context doesn't. Every resolution becomes institutional knowledge your whole team can use."
+    }
+  }
+]
+---
+<section class="section">
+  <div class="container">
+    <SectionHeader
+      badge="Cleric in action"
+      title="Things break. Cleric investigates."
+      subtitle="While you're still reading the alert, Cleric's already three steps into the investigation."
+    />
+
+    <div class="space-y-12 mt-16">
+      {features.map((feature, featureIndex) => (
+        <div class={[
+          'card py-10 flex max-desktop:flex-col overflow-hidden gap-10',
+          featureIndex % 2 === 0 ? 'flex-row pl-10 max-desktop:pr-10' : 'flex-row-reverse pr-10 max-desktop:pl-10'
+        ].join(' ')}>
+          <div class="flex flex-col justify-center">
+            <h3>{feature.title}</h3>
+            <p class="text-gray-600 text-lg mt-5">{feature.description.text}</p>
+
+            {feature.description.additional && (
+              <div class="flex gap-2 items-center text-gray-600 mt-5">
+                <p class="text-lg">{feature.description.additional.text}</p>
+                <Fragment set:html={feature.description.additional.icon} />
+              </div>
+            )}
+          </div>
+
+          <div class="relative">
+            <Image src={feature.image} alt={feature.title} class="tablet:min-w-full tablet:max-w-[600px]" />
+            {featureIndex > 0 && <div
+              class={[
+                'absolute',
+                featureIndex % 2 === 0
+                  ? 'inset-y-0 right-0 w-10 tablet:w-20 desktop:w-24 bg-linear-(--gradient-gray-fade-right)'
+                  : 'inset-y-0 left-0 w-10 tablet:w-20 desktop:w-24 bg-linear-(--gradient-gray-fade-left)'
+              ].join(' ')}
+            />}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

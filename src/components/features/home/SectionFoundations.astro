@@ -1,0 +1,69 @@
+---
+import { Image } from 'astro:assets'
+import Foundation1Img from '@/assets/images/home/foundations/foundation-1.png'
+import Foundation2Img from '@/assets/images/home/foundations/foundation-2.png'
+import Foundation3Img from '@/assets/images/home/foundations/foundation-3.png'
+import SectionHeader from '@/components/layout/SectionHeader.astro'
+import Button from '@/components/ui/Button.astro'
+
+const foundations: {
+  title: string
+  description: string
+  image: ImageMetadata
+  cardClass?: string
+  textWrapperClass?: string
+}[] = [
+  {
+    title: 'Maps your world',
+    description: 'Services, dependencies, and ownership mapped automatically. When something breaks, Cleric knows where to look.',
+    image: Foundation1Img,
+    cardClass: 'px-12 pt-12 pb-4'
+  },
+  {
+    title: 'Tests every theory',
+    description: 'Correlates signals, tests hypotheses in parallel, tracks confidence. Systematic elimination, not guesswork.',
+    image: Foundation2Img,
+    cardClass: 'px-12 pt-12 pb-4'
+  },
+  {
+    title: 'Compounds over time',
+    description: 'Every fix teaches Cleric something new. Patterns and context accumulate automatically.',
+    image: Foundation3Img,
+    cardClass: 'desktop:last:col-span-2',
+    textWrapperClass: 'desktop:w-1/2 px-12 pt-12'
+  }
+]
+---
+<section class="section">
+  <div class="container flex flex-col items-center">
+    <SectionHeader
+      badge="Under the hood"
+      title="Simple on the surface. Serious underneath."
+      subtitle="Three purpose-built systems that turn alerts into answers—and make every investigation faster than the last."
+    />
+
+    <div class="mt-16 grid grid-cols-1 desktop:grid-cols-2 gap-6">
+      {foundations.map((foundation, foundationIndex) => (
+        <div class={['card relative overflow-hidden', foundation.cardClass].join(' ')}>
+          <div class={['flex flex-col justify-center', foundation.textWrapperClass].join(' ')}>
+            <h4>{foundation.title}</h4>
+            <p class="text-lg mt-4">{foundation.description}</p>
+          </div>
+
+          <Image src={foundation.image} alt={foundation.title} class="w-full mt-6" />
+
+          {foundationIndex <= 1 && <div
+            class={[
+              'absolute max-desktop:hidden',
+              foundationIndex % 2 === 0
+                ? 'inset-y-0 left-0 w-24 bg-linear-(--gradient-gray-fade-left)'
+                : 'inset-y-0 right-0 w-24 bg-linear-(--gradient-gray-fade-right)'
+            ].join(' ')}
+          />}
+        </div>
+      ))}
+    </div>
+
+    <Button type="primary" mode="dark" class="mt-10">Explore Full Platform</Button>
+  </div>
+</section>

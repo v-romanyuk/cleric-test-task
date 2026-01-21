@@ -1,0 +1,17 @@
+---
+import Badge from '@/components/ui/Badge.astro'
+import IconArrowLink from '@/assets/icons/arrow-link.svg';
+---
+
+<a href="#" class={[
+  'flex items-center gap-2 tablet:gap-3 backdrop-blur-sm rounded-md bg-black/10 border border-black/10',
+  'p-2 tablet:p-3 transition-opacity opacity-80 hover:opacity-100 text-white'
+].join(' ')}>
+  <Badge type="secondary" class="text-xs tablet:text-sm">Press release</Badge>
+
+  <span class="text-xs tablet:text-[15px]">
+    Cleric launches the first self-learning AI SRE
+  </span>
+
+  <IconArrowLink />
+</a>

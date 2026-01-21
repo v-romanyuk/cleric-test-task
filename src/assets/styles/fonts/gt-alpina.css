@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'GT Alpina';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/fonts/GT_Alpina/GT-Alpina-Standard-Light.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'GT Alpina';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/GT_Alpina/GT-Alpina-Standard-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'GT Alpina';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/GT_Alpina/GT-Alpina-Standard-Medium.woff2') format('woff2');
+}
+

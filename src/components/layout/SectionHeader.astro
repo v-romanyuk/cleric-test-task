@@ -1,0 +1,38 @@
+---
+import Badge from '@/components/ui/Badge.astro'
+
+interface Props {
+  badge: string
+  title: string
+  subtitle?: string
+  class?: string
+  tabletAlign?: 'left' | 'center'
+}
+
+const {
+  badge,
+  title,
+  subtitle,
+  class: className = '',
+  tabletAlign = 'left'
+} = Astro.props
+
+const classes = [
+  tabletAlign === 'center' ? 'items-center' : 'items-start',
+  'max-w-[960px] mx-auto flex flex-col desktop:items-center',
+  className
+].filter(Boolean)
+---
+
+<div class={[
+  ...classes,
+  tabletAlign === 'center' ? 'text-center' : 'text-left',
+  'desktop:text-center'
+].join(' ')}>
+  <Badge>{badge}</Badge>
+  <h2 class="mt-6">{title}</h2>
+
+  {subtitle && <p class="text-subtitle text-gray-600 mt-2">{subtitle}</p>}
+  <slot />
+</div>
+

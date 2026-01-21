@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'Cleric Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/fonts/Cleric_Sans/Cleric-Sans-Text-300.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Cleric Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Cleric_Sans/Cleric-Sans-Text-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Cleric Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/Cleric_Sans/Cleric-Sans-Text-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Cleric Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/Cleric_Sans/Cleric-Sans-Text-600.woff2') format('woff2');
+}

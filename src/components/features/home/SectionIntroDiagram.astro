@@ -1,0 +1,20 @@
+---
+import { Image } from 'astro:assets'
+import IntoDiagramImg from '@/assets/images/home/intro-diagram.png'
+import SectionHeader from '@/components/layout/SectionHeader.astro'
+---
+
+<section class="section section-gray">
+  <div class="container">
+    <SectionHeader
+      badge="How it works"
+      title="Meet Cleric"
+      subtitle="Cleric investigates problems, surfaces answers, and learns from your engineers."
+      tabletAlign="center"
+    />
+  </div>
+
+  <div class="container-full">
+    <Image src={IntoDiagramImg} alt="Cleric Diagram" class="w-full mt-16" />
+  </div>
+</section>

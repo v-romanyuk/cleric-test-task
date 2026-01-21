@@ -1,0 +1,18 @@
+---
+const metrics: { label: string; value: string }[] = [
+  { label: ' Time to Root Cause', value: '5 min' },
+  { label: 'Actionable Findings', value: '92%' },
+  { label: 'Production-Grade Investigations', value: '200,000+' }
+]
+---
+
+<section class="container pt-20 pb-10">
+  <div class="grid max-tablet:justify-center desktop:grid-cols-3 tablet:grid-cols-2 gap-8 justify-between">
+    {metrics.map((metric) => (
+      <div class="text-center space-y-1 tablet:last:col-span-2 desktop:last:col-span-1">
+        <p class="font-semibold text-[44px] leading-tight">{metric.value}</p>
+        <p class="text-lg">{metric.label}</p>
+      </div>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,50 @@
+---
+import { Image } from 'astro:assets'
+import HeroBackgroundImg from '@/assets/images/home/hero/hero-bg.jpg'
+import HeroDashboardImg from '@/assets/images/home/hero/hero-dashboard.png'
+import HeroSlackImg from '@/assets/images/home/hero/hero-slack.png'
+
+import Button from '@/components/ui/Button.astro'
+import HeroBadgeLink from './HeroBadgeLink.astro';
+---
+
+<section class="min-h-svh relative pt-14 pb-6">
+  <!-- Hero Background Image -->
+  <div class="absolute inset-0 z-[-1]">
+    <Image src={HeroBackgroundImg} alt="Hero" class="size-full object-cover" />
+  </div>
+
+  <div class="container py-16 flex flex-col items-center text-center">
+    <HeroBadgeLink />
+
+    <h1 class="text-white mt-12 mx-auto max-w-[960px]">
+      The AI SRE that learns from your engineers
+    </h1>
+
+    <p class="text-subtitle text-white mt-8 mx-auto max-w-[680px] text-center">
+      Cleric investigates production issues, captures what works, and makes your whole team faster.
+    </p>
+
+    <div class="flex items-center gap-4 tablet:gap-6 desktop:gap-8 mt-8">
+      <Button type="primary" mode="light" size="large">Start for free</Button>
+      <Button type="primary" mode="light" size="large" outlined>Request demo</Button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="relative">
+      <Image src={HeroDashboardImg} alt="Hero Dashboard" class="w-full h-auto max-tablet:hidden" />
+
+      <div class={[
+        'max-tablet:mt-14 tablet:absolute bottom-0 tablet:-right-5 desktop:-right-20',
+        'rounded-2xl overflow-hidden shadow-elevated',
+        'w-full tablet:w-[220px] desktop:w-[320px]'
+      ].join(' ')}>
+        <Image src={HeroSlackImg} alt="Hero Slack" class="size-full object-cover" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Content -->
+  <div class="absolute bottom-0 w-full h-[200px] bg-linear-(--gradient-white-fade-down)"/>
+</section>
